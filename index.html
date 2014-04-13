@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  
+  <title>12 Tone Row Composatron™</title>
+  
+  <script src="MIDI.js/js/MIDI/AudioDetect.js"></script>
+  <script src="MIDI.js/js/MIDI/LoadPlugin.js"></script>
+  <script src="MIDI.js/js/MIDI/Plugin.js"></script>
+  <script src="MIDI.js/js/MIDI/Player.js"></script>
+  <script src="MIDI.js/js/Window/DOMLoader.XMLHttp.js"></script>
+  <script src="MIDI.js/inc/Base64.js"></script>
+  <script src="MIDI.js/inc/base64binary.js"></script>
+  <script src="MIDI.js/js/Color/SpaceW3.js"></script>
+  <script src="MIDI.js/js/MusicTheory/Synesthesia.js"></script>
+  
+  <link href="composatron.css" rel="stylesheet">
+  <script src="tonerow.js"></script>
+  <script src="controller.js"></script>
+</head>
+<body>
+  <header>
+    <h1><span>The patent-pending</span> 12 Tone Row Composatron™ <span>gives you…</span></h1>
+    <noscript>Tone Row Generator requires Javascript.</noscript>
+    <h2 id="rowInfo"></h2> <span id="nameSuggestion"></span>
+  </header>
+  <div id="tableWrapper">
+    <table id="numericTable"></table>
+    <div id="formWrapper">
+      <form name="options">
+        <p>
+          <span class="arrow">➙</span> Starting with 
+          <select name="keySelection">
+            <option value="0">C</option>
+            <option value="1">C♯</option>
+            <option value="2">D</option>
+            <option value="3">D♯</option>
+            <option value="4">E</option>
+            <option value="5" selected>F</option>
+            <option value="6">F♯</option>
+            <option value="7">G</option>
+            <option value="8">G♯</option>
+            <option value="9">A</option>
+            <option value="10">A♯</option>
+            <option value="11">B</option>
+          </select>
+          <span class="arrow">➙</span>
+        </p><p>
+          With the rhythm
+          <select name="rhythmSelection">
+            <option selected data-rhythm="0.125" data-velocity="127">Eighths</option>
+            <option data-rhythm="0.5,0.25,0.25,0.5,0.375,0.125,0.5,0.02,0.375,0.125,0.02,1" data-velocity="127">Melodic</option>
+            <option data-rhythm="0.01,0.01,1" data-velocity="127">Triads</option>
+            <option data-rhythm="0.25,0.167,0.083" data-velocity="127,100,80">Swung</option>
+            <option data-rhythm="1,0.01,0.03,0.71" data-velocity="63,15,15,43">Raindrops</option>
+            <option data-rhythm="0.06,0.1,0.2,0.03,0.01" data-velocity="127">Cat</option>
+          </select>
+        </p>
+      </form>
+      <div id="logWrapper">
+        <div id="updateLog"></div>
+        <div id="errorLog"></div>
+      </div>
+      <form name="refresh">
+        <input type="submit" value="Recompose ⟲">
+      </form>
+      <form name="load">
+        <label for="loadComposition">
+          Load composition
+        </label>
+        <a href="#" id="helpOpenLink">Help?</a>
+        <div id="helpMessage">
+          <p>Enter the <code>P0</code> row of the composition, with no spaces in between.</p>
+          <p>Any number 10 becomes <code>A</code> and 11 becomes <code>B</code>.</p>
+          <p>For example, a composition with a <code>P0</code> row of
+          <pre>0 7 4 9 6 1 10 11 2 5 8 3</pre> would be entered as
+          <code>074961ab2583</code>.</p>
+          <a href="#" id="helpCloseLink">(X)</a>
+        </div>
+        <input id="loadComposition" name="loadComposition" type="text">
+        <input type="submit" value="Load">
+      </form>
+    </div>
+    <table id="chromaticTable"></table>
+  </div>
+  <p><a href="#" class="todo">run tests</a> | <a href="#" class="todo">view source code</a></p>
+</body>
+</html>

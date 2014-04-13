@@ -1,0 +1,225 @@
+body {
+  text-align: center;
+  font: 12px sans-serif;
+}
+
+th, td {
+  padding: 0.25em;
+  border-radius: 50%;
+}
+
+tr > th:last-child {
+  text-align: left;
+}
+
+#tableWrapper > * {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+#tableWrapper {
+  text-align: center;
+}
+
+#tableWrapper > p, #tableWrapper form {
+  margin: 1em 0;
+  padding-top: .5em;
+  display: block;
+}
+
+#tableWrapper > p:first-child {
+  border: 0;
+}
+
+#tableWrapper > div {
+  min-width: 21em;
+}
+
+input[type=text] {
+  width: 8em;
+}
+
+.todo, #errorLog {
+  font-weight: bold;
+  color: red;
+}
+
+#chromaticTable * {
+  padding: 0.25em;
+}
+
+header h2 {
+  display: inline-block;
+  margin-top: -1em;
+}
+
+#nameSuggestion {
+  display: inline-block;
+  min-width: 10em;
+  text-align: left;
+}
+
+hr {
+  margin: 6em auto 0;
+  width: 75%;
+}
+
+h1 span {
+  font-size: 50%;
+  font-weight: normal;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: white;
+}
+
+form[name=load] {
+  position: relative;
+}
+
+#helpOpenLink:after {
+  content: "\a";
+  white-space: pre;
+}
+
+#helpMessage {
+  text-align: left;
+  visibility: hidden;
+  width: 125%
+  margin: auto;
+  font-size: 110%;
+  background: white;
+  position: absolute;
+  top: -6em;
+  padding: 1.5em 3em 1.5em 1.5em;
+  border: 1px solid blue;
+}
+
+#helpCloseLink {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+
+input[type=submit], button {
+  border: 0;
+  border-radius: 2px;
+  font-size: 100%;
+  padding: 0.5em 1em;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+button {
+  padding: 0;
+  font-size: 80%;
+  border-radius: 3px;
+  font-weight: bold;
+  width: 3em;
+}
+
+button:disabled {
+  background: #eee;
+}
+
+input[type=submit]:hover, select:hover, button:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.1));
+}
+
+button {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+
+select {
+  display: block;
+  margin: 0.25em 0;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px #DDDDDD inset;
+  display: inline-block;
+  padding: 0.5em 0.6em;
+  font-family: sans-serif;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+input[type=submit] {
+  color: #fff;
+  background-color: #0078e7;
+}
+
+form[name=load] input[type=text] {
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px #DDDDDD inset;
+  padding: 0.5em 0.6em;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+form[name=load] input[type=text]:hover, form[name=load] input[type=text]:focus {
+  border-color: #21B8DD;
+}
+
+.arrow {
+  font-size: 200%;
+}
+
+#logWrapper {
+  max-width: 18em;
+  height: 2em;
+  margin: 1em auto;
+  font-weight: bold;
+}
+
+#errorLog {
+  color: red;
+}
+
+#updateLog {
+  color: green;
+}
+
+@media(max-width: 1300px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+@media(max-width: 1200px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media(max-width: 1100px) {
+  body {
+    font-size: 9px;
+  }
+}
+
+@media(max-width: 1000px) {
+  table button {
+    width: 3em;
+  }
+
+  th, td {
+    padding: 0.125em;
+  }
+}
+
+@media print {
+  #formWrapper {
+    display: none;
+  }
+
+  table {
+    padding: 4em 0;
+    margin: 4em 0;
+    border-bottom: 1px solid black;
+  }
+}
